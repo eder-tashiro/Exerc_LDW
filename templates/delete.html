@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Confirmar Exclusão</h1>
+        <p>Tem certeza de que deseja excluir o produto <strong>{{ produto['nome'] }}</strong>?</p>
+        <form action="{{ url_for('delete', id=produto['id']) }}" method="post">
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+    <!-- Scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    {% endblock content %}

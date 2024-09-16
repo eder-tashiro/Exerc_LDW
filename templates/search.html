@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mt-4 ml-5">
+    <h2>Pesquisar Produto</h2>
+    <form action="{{ url_for('search') }}" method="get" class="form-inline mb-3">
+        <input type="text" name="termo" class="form-control mr-sm-2" value="{{ termo }}" placeholder="Pesquisar produto" required>
+        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Pesquisar</button>
+    </form>
+
+    {% if termo %}
+        {% if produtos %}
+            <h3>Resultados da Pesquisa para "{{ termo }}"</h3>
+            <div class="row">
+                {% for produto in produtos %}
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        {% if produto['imagem'] %}
+                        <img src="{{ url_for('static', filename='uploads/' + produto['imagem']) }}" class="card-img-top img-fluid" alt="{{ produto['nome'] }}" style="height: 500px; object-fit: cover;">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ produto['nome'] }}</h5>
+                            <p class="card-text">Preço: R$ {{ produto['preco'] }}</p>
+                            <p class="card-text">{{ produto['descricao'] }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Nenhum produto encontrado para "{{ termo }}".</p>
+        {% endif %}
+    {% else %}
+        <p>Por favor, insira um termo de pesquisa para ver os resultados.</p>
+    {% endif %}
+</div>
+{% endblock %}
+

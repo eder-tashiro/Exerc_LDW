@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="position-relative">
+    <div class="img" style="position: relative; height: 100vh;">
+        <!-- A imagem será ajustada para cobrir o fundo -->
+        <img src="../static/imgs/fundo1.jpg" class="img-fluid w-100" style="height: 100%; object-fit: cover;" alt="Imagem de Fundo">
+        
+        <!-- Ajuste do texto centralizado usando Flexbox, movendo um pouco mais para cima -->
+        <div class="d-flex flex-column justify-content-start align-items-center position-absolute w-100 h-100" style="top: 0; left: 0; padding-top: 5vh;">
+            <!-- Ajuste o tamanho do texto para telas menores usando classes responsivas -->
+            <h2 class="text-white display-4 display-md-3 display-lg-1 text-center">Padaria DOCE MAGIA</h2>
+            <p class="text-white lead text-center">O lugar onde seus sonhos mais doces viram realidade.</p>
+        </div>
+    </div>
+</main>
+{% endblock %}

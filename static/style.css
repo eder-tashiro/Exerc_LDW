@@ -1,0 +1,37 @@
+
+* {
+    font-size: 18pt;
+} 
+main{
+    height: 100%;
+    display: flex;
+} 
+
+.bg-light {
+    background-color: #000000 !important;
+}
+
+.content {
+    flex: 1;
+    font-size: 18pt;
+}
+
+h2{
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  
+}
+
+h3{
+    text-align: center;
+}
+.row{
+    text-align: center;
+    justify-content: center;
+}
+footer {
+    
+    padding: 1rem;
+    text-align: center;
+}
+
